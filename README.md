@@ -18,15 +18,10 @@ What you need:
 + 1 x Universal wheel 
 
 + 1 x AA Battery box 
-
 + 4 AA Battery
-
 + Switch
-
 + 2 x Infrared Obstacle Avoidance Sensor
-
 + 3 Jumper wire
-
 + Optional: 22 - 24 AWG wire
 
 All necessary screw and nut. Typically M3 nuts and bolts. 
