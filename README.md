@@ -22,8 +22,8 @@ A Robot that can follow a line using L293D motor with Arduino Uno R3 and Infared
 
 
 **Hardware Setup:**
-
+Follow the circuit diagram for details
 
 **Software Setup:**
 Arduino IDE
-Adafruit Motor Shield Library Master
+Adafruit Motor Shield Library Master (Arduino IDE/Library Manager/Search Shield-Install Adafruit Motor Shield Library)
