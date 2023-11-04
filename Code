@@ -1,0 +1,99 @@
+
+#include  <AFMotor.h>
+
+#define R_S A4  //ir sensor right 
+
+#define L_S A3  //ir sensor left 
+
+AF_DCMotor m2(2);  //define motor 3 as LEFT MOTOR 
+
+AF_DCMotor m3(3);  //define motor 4 as RIGHT MOTOR 
+void setup() { 
+
+  //Set initial speed of the motor & stop 
+
+  m3.setSpeed(200); 
+
+  m3.run(RELEASE); 
+
+  m2.setSpeed(200); 
+
+  m2.run(RELEASE); 
+
+  pinMode(R_S, INPUT); 
+
+  pinMode(L_S, INPUT); 
+
+ 
+ 
+
+  delay(1000); 
+
+} 
+
+ 
+ 
+
+void loop() { 
+
+  if ((digitalRead(R_S) == 0) && (digitalRead(L_S) == 0)) { 
+
+    forward(); 
+
+  }  //if Right Sensor and Left Sensor are at Whitecolour then it will call the forward function 
+
+   if ((digitalRead(R_S) == 1) && (digitalRead(L_S) == 0)) { 
+
+    turnRight(); 
+
+  }  //if Right Sensor is Black and Left Sensor isWhite then it will call turn Right function  
+
+  if ((digitalRead(R_S) == 0) && (digitalRead(L_S) == 1)) { 
+
+    turnRight(); 
+
+  }  //if Right Sensor is White and Left Sensor is Black then it will call turn Left function 
+
+  if ((digitalRead(R_S) == 1) && (digitalRead(L_S) == 1)) { 
+
+    Stop(); 
+
+  }  //if Right Sensor and Left Sensor are at Blackcolor then it will call Stop function 
+
+} 
+
+ 
+ 
+ 
+
+void forward() {   
+
+  m2.run(FORWARD); 
+
+  m3.run(FORWARD); 
+
+} 
+
+void turnRight() {  
+
+  m2.run(FORWARD); 
+
+  m3.run(BACKWARD); 
+
+} 
+
+void turnLeft() {  
+
+  m2.run(BACKWARD); 
+
+  m3.run(FORWARD); 
+
+} 
+
+void Stop() {   
+
+  m2.run(BRAKE); 
+
+  m3.run(BRAKE); 
+
+} 
