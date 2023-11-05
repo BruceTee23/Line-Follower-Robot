@@ -16,6 +16,7 @@ A Robot that can follow a line using L293D motor with Arduino Uno R3 and Infared
 + Switch
 + 2 x Infrared Obstacle Avoidance Sensor
 + 3 x Jumper wires
++ Electrical tape
 + USB 2.0 A Male to B Male 28/24AWG Cable
 + Optional: 22 - 24 AWG wire, Soldering gun, soldering wire
 + All necessary screw and nut. Typically M3 nuts and bolts. 
