@@ -1,0 +1,2 @@
+1. Connect the L293D motor shield to your Arduino Board by fitting the pins in the connection space
+2. Wire the battery holder to the L293D with the switch between the connections on the positive side and negative to negative
