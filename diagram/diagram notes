@@ -1,2 +1,5 @@
-1. Connect the L293D motor shield to your Arduino Board by fitting the pins in the connection space
-2. Wire the battery holder to the L293D with the switch between the connections on the positive side and negative to negative
+1. Connect the L293D motor shield to your Arduino Board by fitting the pins in the connection space.
+2. Wire the battery holder to the L293D with the switch between the connections on the positive side and negative to negative.
+3. Connect the 2 motors on either M1, M2, M3, or M4 depends on your reference. In this case, I am connecting it to M2 and M3 for better organizing things. Make sure that they are running in the direction you wanted.
+4. Connect IR sensor to the L293D through this guide: (Out -> A0-5, GND -> GND, VCC -> +5)
+5. Connect your Arduino to your computer using USB A/B head cable
