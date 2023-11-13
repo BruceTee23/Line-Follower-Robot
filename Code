@@ -1,77 +1,68 @@
+#include <AFMotor.h>
 
-#include  <AFMotor.h>
+//defining pins and variables
+#define lefts A0 
+#define rights A2
 
-#define R_S A4  //ir sensor right 
-#define L_S A3  //ir sensor left 
+//defining motors
+AF_DCMotor motor2(2, MOTOR12_8KHZ); 
+AF_DCMotor motor3(3, MOTOR12_8KHZ);
+/*
+AF_DCMotor motor2(3, MOTOR12_8KHZ); 
+AF_DCMotor motor3(4, MOTOR12_8KHZ);
+ */
 
-AF_DCMotor m2(2);  //define motor 3 as LEFT MOTOR 
-AF_DCMotor m3(3);  //define motor 4 as RIGHT MOTOR 
+void setup() {
+  //setting the speed of motors
+  motor2.setSpeed(200);
+  motor3.setSpeed(200);
+  //declaring pin types
+  pinMode(lefts,INPUT);
+  pinMode(rights,INPUT);
+  //begin serial communication
+  Serial.begin(9600);
+  
+}
 
-void setup() { 
-  //Set initial speed of the motor & stop 
-
-  m3.setSpeed(200); 
-  m3.run(RELEASE); 
-
-  m2.setSpeed(200); 
-  m2.run(RELEASE); 
-
-  pinMode(R_S, INPUT); 
-  pinMode(L_S, INPUT);
-
-  delay(1000); 
-
-} 
-
- 
-void loop() { 
-
-  if ((digitalRead(R_S) == 0) && (digitalRead(L_S) == 0)) { 
-    forward(); 
-
-  }  //if Right Sensor and Left Sensor are at Whitecolour then it will call the forward function 
-
-   if ((digitalRead(R_S) == 1) && (digitalRead(L_S) == 0)) { 
-    turnRight(); 
-
-  }  //if Right Sensor is Black and Left Sensor isWhite then it will call turn Right function  
-
-  if ((digitalRead(R_S) == 0) && (digitalRead(L_S) == 1)) { 
-    turnRight(); 
-
-  }  //if Right Sensor is White and Left Sensor is Black then it will call turn Left function 
-
-  if ((digitalRead(R_S) == 1) && (digitalRead(L_S) == 1)) { 
-    Stop(); 
-
-  }  //if Right Sensor and Left Sensor are at Blackcolor then it will call Stop function 
-
-} 
-
-void forward() {   
-
-  m2.run(FORWARD); 
-  m3.run(FORWARD); 
-
-} 
-
-void turnRight() {  
-
-  m2.run(FORWARD); 
-  m3.run(BACKWARD); 
-
-} 
-
-void turnLeft() {  
-
-  m2.run(BACKWARD); 
-  m3.run(FORWARD); 
-
-} 
-
-void Stop() {   
-
-  m2.run(BRAKE); 
-  m3.run(BRAKE); 
-
-} 
+void loop(){
+  //printing values of the sensors to the serial monitor
+  Serial.println(analogRead(lefts));
+  Serial.println(analogRead(rights));
+  //line detected by both
+  if(analogRead(lefts)<=400 && analogRead(rights)<=400){
+    //stop
+    motor2.run(FORWARD);
+    motor3.run(FORWARD);
+  }
+  //line detected by left sensor
+  else if(analogRead(lefts)<=400 && !analogRead(rights)<=400){
+    //turn left
+    motor2.run(BACKWARD);
+    motor3.run(FORWARD);
+    /*
+    motor2.run(RELEASE);
+    motor3.run(FORWARD);
+     */
+  }
+  //line detected by right sensor
+  else if(!analogRead(lefts)<=400 && analogRead(rights)<=400){
+    //turn right
+    motor2.run(FORWARD);
+    motor3.run(BACKWARD);
+    /*
+    motor2.run(FORWARD);
+    motor3.run(RELEASE);
+     */
+  }
+  //line detected by none
+  else if(!analogRead(lefts)<=400 && !analogRead(rights)<=400){
+    //stop
+    motor2.run(RELEASE);
+    motor3.run(RELEASE);
+    /*
+    motor2.run(BACKWARD);
+    motor3.run(BACKWARD);
+     */
+  }
+  
+}
