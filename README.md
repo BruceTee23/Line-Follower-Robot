@@ -5,7 +5,6 @@ A Robot that can follow a line using L293D motor with Arduino Uno R3 and Infared
 
 
 **What you need:**
-
 + 1 x Arduino Uno R3
 + 1 x L293D DC Motor Driver Shield
 + 1 x Car chassis
@@ -30,13 +29,11 @@ Follow the circuit diagram for details
 
 
 **Software Setup:**
-
 + Arduino IDE
 + Adafruit Motor Shield Library Master (Arduino IDE/Library Manager/Search Shield-Install Adafruit Motor Shield Library)
 
 
 **How does it work?**
-
 + Using IR sensors, we can take advantage of the light reflections to control the movement of the robot.
 + For example, if the robot rests on a surface, both sensors will receive lights reflected from that surface, signaling the LED next to it to lights on. This signals the robot to move straight forward. But when the surface is something like a black tape that can absorbs light, there will be no reflected light, resulting in no popup LED. If the left sensor does not receive reflected light, and so does with the right sensor. This way, the line can stay between the sensors, keeping the robot to stays on the line. 
 
