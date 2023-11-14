@@ -40,6 +40,6 @@ For example, if the robot rests on a surface, both sensors will receive lights r
 -The robot satisfied the task to stay on the line to its final destination
 -Simplicity
 
-*Disadvatag(es)**
--The robot does not move straight in a line_
---
+**Disadvantages**
+-The robot does not move straight in a line
+
