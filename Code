@@ -7,10 +7,6 @@
 //defining motors
 AF_DCMotor motor2(2, MOTOR12_8KHZ); 
 AF_DCMotor motor3(3, MOTOR12_8KHZ);
-/*
-AF_DCMotor motor2(3, MOTOR12_8KHZ); 
-AF_DCMotor motor3(4, MOTOR12_8KHZ);
- */
 
 void setup() {
   //setting the speed of motors
@@ -19,8 +15,6 @@ void setup() {
   //declaring pin types
   pinMode(lefts,INPUT);
   pinMode(rights,INPUT);
-  //begin serial communication
-  Serial.begin(9600);
   
 }
 
