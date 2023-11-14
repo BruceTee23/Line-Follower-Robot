@@ -36,7 +36,7 @@ Follow the circuit diagram for details
 **How does it work?**
 + Using IR sensors, we can take advantage of the light reflections to control the movement of the robot.
 + For example, if the robot rests on a surface, both sensors will receive lights reflected from that surface, signaling the LED next to it to lights on. This signals the robot to move straight forward. But when the surface is something like a black tape that can absorbs light, there will be no reflected light, resulting in no popup LED. If the left sensor does not receive reflected light, and so does with the right sensor. This way, the line can stay between the sensors, keeping the robot to stays on the line.
-+ *Note: the key is to calibrate the sensors correctly so the second LEDs do not stay on all the time, but only enough to receive the refleted light and off when receive nothing**
++ *Note: the key is to calibrate the sensors correctly so the second LEDs do not stay on all the time, but only enough to receive the refleted light and off when receive nothing*
 
 **Advantages**
 + The robot satisfied the task to stay on the line to its final destination
