@@ -1,7 +1,7 @@
 # Line-Follower-Robot
 A Robot that can follow a line using L293D motor with Arduino Uno R3 and Infared LED
 
-![20231104_173322](https://github.com/BruceTee23/Line-Follower-Robot/assets/149126740/7b5b72d1-8b6b-4845-a7fc-68f295acf520)
+![robot](https://github.com/BruceTee23/Line-Follower-Robot/assets/149126740/74f09545-eac4-479c-b68b-4c96ade952c4)
 
 
 **What you need:**
