@@ -3,5 +3,7 @@
 3. Connect the 2 motors on either M1, M2, M3, or M4 depends on your reference. In this case, I am connecting it to M2 and M3 for better organizing things. Make sure that they are running in the direction you wanted.
 4. Connect IR sensor to the L293D through this guide: (Out -> A0-5, GND -> GND, VCC -> +5)
 5. Connect your Arduino to your computer using USB A/B head cable
+6. Code and upload it to the Arduino Board
+7. Calibrate your sensors through the potentiometers on it so the light only reflects on a surface the robot rests on and no reflect when they are on top of black tape.
 
 Notice: In case the wire are too short, you can use the extra wire mentioned in material list to extend the connection. 
